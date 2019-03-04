@@ -1,0 +1,11 @@
+@import 'variables';
+@import 'mixins';
+
+.form {
+    @include margin-reset;
+    @include padding-reset;
+
+    &--login {
+        width: 100%;
+    }
+}

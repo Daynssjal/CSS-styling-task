@@ -1,0 +1,18 @@
+@import 'mixins';
+@import 'variables';
+
+.header {
+    color: $header-color;
+    background-color: $header-bg-color;
+    @include flexbox(row, nowrap, space-between, center);
+    
+    &__item {
+        @include flexbox(row, nowrap, space-between, center);
+    }
+}
+
+@media screen and (max-width: $xs) {
+    .header {
+        @include font-size(12, 16);
+    }
+}

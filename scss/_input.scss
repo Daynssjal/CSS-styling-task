@@ -1,0 +1,39 @@
+@import 'variables';
+@import 'mixins';
+
+.input {
+    display: block;
+    @include reset-border;
+    @include reset-outline;
+
+    &--search {
+        width: 35%;
+        @include padding(0.5em 0);
+        @include margin(0 1em 2em 0);
+        @include font-size(16, 16);
+        @include border(none, none, 1px solid $input-border-color, none); 
+    }
+    &--name,
+    &--password {
+        width: 100%;
+        color: $input-login-color;
+        @include margin(0 auto 0.5em);
+        @include padding(0.5em 0);
+        @include font-size(14, 16);
+        @include border(none, none, 1px solid $input-border-color, none); 
+    }
+
+    &--warn {
+        color: $warn-color;
+         @include border(none, none, 2px solid $warn-color, none);
+    }
+}
+
+
+@media screen and (max-width: $sm) {
+    .input {
+        &--search {
+            width: 60%;
+        }
+    }
+}

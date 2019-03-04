@@ -1,0 +1,30 @@
+@import 'variables';
+@import 'mixins';
+
+.btn {
+    @include display(block);
+    @include margin-reset;
+    @include padding-reset;
+    @include reset-border;
+    @include reset-outline;
+    cursor: pointer;
+
+    &--login {
+        width: 90%;
+        color: $btn-color;
+        background-color: $btn-bg-color;
+        @include text-transform(uppercase);
+        @include margin(0.8em auto 0);
+        @include padding(0.5em);
+        @include font-size(18, 16);
+        @include border-radius(2px);
+        @include box-shadow(1px, 2px, 2px, rgb(182, 177, 177));
+    }
+
+    &--logout {
+        color: $btn-color;
+        @include text-transform(uppercase);
+        @include margin(0 2em 0 0);
+        @include font-size(14,16);
+    }
+}

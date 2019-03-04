@@ -1,0 +1,68 @@
+@import 'mixins';
+@import 'variables';
+
+.container {
+    color: $container-color;
+    @include display(block);
+    @include margin-reset;
+    @include padding-reset;
+
+    &--body {
+        width: 100%;
+        background-color: $container-bg-color;
+        @include margin(0 0 1em);
+        @include padding(1.5em 0 0 0);
+        @include flexbox(row, nowrap, space-between, flex-start);
+    }
+    
+    &--content {
+        width: 80%;
+        background-color: $container-content-bg-color;
+        @include margin(0 1em 0 0);
+        @include box-shadow(-2px, 2px, 1px, rgb(214, 207, 207));
+    }
+
+    &--login {
+        width: 22em;
+        height: 25em;
+        background-color: $container-login-bg-color;
+        @include margin(5.62em auto 0);
+        @include flexbox(column, nowrap, space-around, center);
+        @include border-radius(2px);
+        @include box-shadow(1px, 1px, 2px, rgb(219, 211, 211));
+    }
+}
+
+
+@media screen and (max-width: $md) {
+    .container {
+        &--content {
+            width: 75%;
+            @include font-size(14, 16);
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .container {
+        &--content {
+            width: 70%;
+        }
+    }
+}
+
+@media screen and (max-width: $xs) {
+    .container {
+        &--body {
+            @include flexbox(column, nowrap, flex-start, center);
+        }
+        &--content {
+            width: 100%;
+            @include margin-reset;
+            @include margin(2em auto 0);
+        }
+        &--login {
+            width: 95%; 
+        }
+    }
+}

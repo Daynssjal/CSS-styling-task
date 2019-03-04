@@ -1,0 +1,59 @@
+@import 'variables';
+@import 'mixins';
+
+.table {
+    width: 95%;
+    border-collapse:collapse;
+    @include margin(2em 1em 0);
+    @include font-size(13, 16);
+
+    &__row {
+        @include border(none, none, 1px solid $container-bg-color, none);
+    }
+    &__data {
+        @include padding(0.5em 0);
+
+        &--bulletpoint {
+            width: 20%;
+        }
+        
+        &--thead {
+            color: darken($body-color, 50%);
+        }
+
+        &--name {
+            width: 30%;
+            color: darken($body-color, 30%);
+        }
+
+        &--products {
+            width: 35%;
+            color: $links-color;
+            @include text-transform(uppercase);
+            @include font-weight(500);
+        }
+
+        &--edit {
+            width: 15%;
+            color: $links-color;
+            @include text-transform(uppercase);
+            @include font-weight(500);
+            @include font-size(14, 16);
+        }
+    }
+}
+
+
+@media screen and (max-width: $sm) {
+    .table {
+        @include font-size(10, 16);
+        &__data {
+            &--bulletpoint {
+                width: 10%;               
+            }
+            &--name {
+                width: 20%;
+            }
+        }
+    }
+}

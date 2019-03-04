@@ -1,0 +1,35 @@
+@import 'general';
+
+@import 'header';
+@import 'heading';
+
+@import 'container';
+
+@import 'menu';
+@import 'table';
+@import 'row';
+@import 'list';
+@import 'gallery';
+
+@import 'form';
+@import 'label';
+@import 'input';
+@import 'button';
+@import 'icon';
+
+
+#categories,
+#posters,
+#login {
+    width: 100%;
+    min-height: 100vh;
+} 
+
+#login {  
+    background: {
+       image: url('../img/rocks-unsplash.jpg');
+       position: 0 0;
+       repeat: no-repeat;
+       size: cover;
+    }
+}

@@ -1,0 +1,118 @@
+@import 'variables';
+@import 'mixins';
+
+.list {
+    @include margin-reset;
+    @include padding-reset;
+    
+    &--categories {
+        width: 40%;
+        @include flexbox(row, nowrap, flex-end, center);
+    }
+    
+    &--posters {
+        width: 50%;
+        @include flexbox(row, nowrap, space-between, center);
+    }
+    
+    &--pages {
+        color: darken($body-color, 30%);
+        width: 33%;
+        @include font-size(14, 16);
+        @include flexbox(row, nowrap, space-between, center);
+    }
+    
+    &--gallery {
+        width: 100%;
+        color: $gallery-color;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 0;
+        @include flexbox(row, nowrap, space-between, center);
+     
+        &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 17, 17, 0)), to(rgb(10, 2, 2)));
+            background: linear-gradient(rgba(20, 17, 17, 0), rgb(10, 2, 2));
+            @include display(block);
+        }
+    }
+    
+    &__item {
+        width: 30%;
+        @include display(inline-block);
+        
+        &--categories {
+            width: 50%;
+        }
+
+        &--pages {
+            width: 24%;
+            @include text-align(center);
+        }
+        
+        &--blue {
+            color: $links-color;
+            @include text-transform(uppercase);
+            @include font-weight(500);
+        }
+        
+        &--img-caption {
+            width: 40%;
+            @include padding(1.5em 1em 1em);
+        }
+
+        &--img-edit {
+            width: 20%;
+        }
+    }
+}
+
+@media screen and (max-width: $md) {
+    .list {
+        &--posters {
+            width: 60%;
+        }
+        &--categories {
+            width: 20%;
+        }
+        &--pages {
+            width: 60%;
+        }
+        &__item {
+            width: 33.33333%;
+            &--categories {
+                width: 100%;
+            }
+            &--img-edit {
+                width: 15%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .list {
+        &--posters {
+            width: 100%;
+            @include text-align(center);
+            @include font-size(13, 16);
+        }
+        &--categories {
+            width: 25%;
+            @include text-align(center);
+            @include font-size(13,16); 
+        }
+        &--pages {
+            width: 100%;
+            @include font-size(12, 16);
+        }
+    }
+}

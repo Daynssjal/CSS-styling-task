@@ -1,0 +1,88 @@
+// MIXINS
+
+@mixin flexbox ($flex-direction, $flex-wrap, $justify-content, $align-items) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: $flex-direction;
+            flex-direction: $flex-direction;
+    -ms-flex-wrap: $flex-wrap;
+        flex-wrap: $flex-wrap;
+    -webkit-box-pack: $justify-content;
+        -ms-flex-pack: $justify-content;
+            justify-content: $justify-content;
+    -webkit-box-align: $align-items;
+        -ms-flex-align: $align-items;
+            align-items: $align-items;
+}
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+}
+
+@mixin font-size($target, $context) {
+    font-size: $target / $context + em;
+}
+
+@mixin border($top, $right, $bottom, $left) {
+    border-top: $top;
+    border-right: $right;
+    border-bottom: $bottom;
+    border-left: $left;
+}
+
+@mixin box-sizing($value) {
+    -webkit-box-sizing: $value;
+            box-sizing: $value;
+}
+
+@mixin margin-reset() {
+    margin: 0;
+}
+
+@mixin padding-reset() {
+    padding: 0;
+}
+
+@mixin reset-border() {
+    border: 0;
+}
+
+@mixin reset-outline() {
+    outline: 0;
+}
+
+@mixin margin($value) {
+    margin: $value;
+}
+
+@mixin padding($value) {
+    padding: $value;
+}
+
+@mixin display($value) {
+    display: $value;
+}
+
+@mixin vertical-align($value) {
+    vertical-align: $value;
+}
+
+@mixin font-weight($value) {
+    font-weight: $value;
+}
+
+@mixin text-align($value) {
+    text-align: $value;
+}
+
+@mixin text-transform($value) {
+    text-transform: $value;
+}
+
+@mixin box-shadow($offset-x, $offset-y, $blur-radius, $color) {
+    -webkit-box-shadow: $offset-x $offset-y $blur-radius $color;
+            box-shadow: $offset-x $offset-y $blur-radius $color; 
+}

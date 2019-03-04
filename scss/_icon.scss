@@ -1,0 +1,83 @@
+@import 'variables';
+@import 'mixins';
+
+.icon {
+    height: auto;
+    width: 1em;
+    cursor: pointer;
+    @include display(block);
+    @include margin-reset;
+    @include padding-reset;
+    @include vertical-align(middle);
+
+    &--login {  
+        color: $icon-login-color;
+        background: $icon-login-bg-color;
+        @include padding(0.5em);     
+        @include font-size(25, 16);
+        @include border-radius(50%);
+    }
+
+    &--navigation {
+        @include padding(0.5em 1em);
+        @include font-size(25, 16);
+    }
+
+    &--user {
+        @include padding(0.5em 1em);
+        @include font-size(25, 16);
+    }
+
+    &--menu {
+        @include padding(0 1em 0 0);
+    }
+
+    &--thead {
+        @include display(inline-block);
+        @include vertical-align(text-top);
+        @include font-size(18, 16);
+    }
+
+    &--square {
+        @include display(inline-block);
+        @include font-size(30, 16);
+    }
+    
+    &--table {
+        @include display(inline-block);
+        @include padding(0 0.5em 0 0);
+    }
+
+    &--controls {
+        @include display(inline-block);
+        @include vertical-align(sub);
+        @include font-size(26, 16);
+    }
+
+    &--pages {
+        @include display(inline-block);
+        @include vertical-align(middle);
+        @include font-size(32, 16);
+    }
+}
+
+
+@media screen and (max-width: $sm) {
+    .icon {
+        &--table {
+            @include padding(0 0.2em 0 0);
+        }
+    }
+}
+
+@media screen and (max-width: $xs) {
+    .icon {
+        &--user {
+            @include padding(0.5em);
+        }
+
+        &--controls {
+            @include font-size(22, 16);
+        }
+    }
+}

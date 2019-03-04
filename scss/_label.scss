@@ -1,0 +1,22 @@
+@import 'mixins';
+
+.label {
+    @include display(block);
+    
+    &--name,
+    &--password {
+        width: 90%;
+        @include margin(0 auto 2em);
+        @include font-size(14,16);
+    }
+
+    &--warn {
+        color: $warn-color;
+        &:after {
+            content: "Required";
+            @include font-size(13,16);
+            @include margin(0 0 0.5);
+            @include display(block);
+        }
+    }
+}

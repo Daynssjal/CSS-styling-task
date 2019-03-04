@@ -1,0 +1,30 @@
+@import 'mixins';
+
+.heading {
+    @include font-weight(normal);
+    @include margin-reset;
+ 
+    &--login {
+       @include margin(1em 0 0);
+    }
+
+    &--content {
+       color: darken($body-color, 50%);
+       @include padding(1em);
+       @include font-size(24, 16);
+    }
+
+    &--thead {
+        @include display(inline-block);
+        @include font-weight(500);
+    }
+}
+
+
+@media screen and (max-width: $xs) {
+    .heading {
+        &--header {
+            display: none;
+        }
+    }
+}

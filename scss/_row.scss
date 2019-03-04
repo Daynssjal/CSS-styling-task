@@ -1,0 +1,36 @@
+@import 'variables';
+@import 'mixins';
+
+.row {
+    width: 100%;
+    @include display(block);
+
+    &--controls-gallery {
+        @include flexbox(row, nowrap, space-between, center);
+    }
+
+    &--controls-categories {
+        @include flexbox(row, nowrap, space-between, center);
+    }
+    &--search {
+        @include margin(2em 0 0 0);
+        @include flexbox(row, nowrap, flex-end, center);
+    }
+    &--pages {
+        @include padding(1.5em 0);
+        @include flexbox(row, nowrap, flex-end, center);
+    }
+    &--login-header {
+        @include text-align(center);
+        @include flexbox(column, nowrap, flex-start, center);
+    }
+}
+
+
+@media screen and (max-width: $sm) {
+    .row {
+        &--controls-gallery {
+            @include flexbox(column, nowrap, space-between, flex-start);
+        }
+    }
+}

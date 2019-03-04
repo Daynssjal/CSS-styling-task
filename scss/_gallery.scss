@@ -1,0 +1,39 @@
+@import 'variables';
+@import 'mixins';
+
+.gallery {
+    width: 100%;
+    @include flexbox(row, wrap, flex-start, center);
+
+    &__item {
+        width: 25%;
+        position: relative;
+        @include box-sizing(border-box);
+        @include border(2px solid #fff, 2px solid #fff, 2px solid #fff, 2px solid #fff);
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+        @include vertical-align(middle);
+        @include font-size(0, 0);
+    }
+}
+
+
+@media screen and (max-width: $md) {
+    .gallery {
+        &__item {
+            width: 50%;
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .gallery {
+        &__item {
+            width: 100%;
+        }
+    }
+}
+

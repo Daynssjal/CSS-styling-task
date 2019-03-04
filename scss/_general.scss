@@ -1,0 +1,27 @@
+@import 'mixins';
+@import 'variables';
+
+body {
+    height: 100%;
+    font-family: $font-family;
+    @include margin-reset;
+    @include padding-reset;
+}
+
+ul {
+    @include margin-reset;
+    @include padding-reset;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a.selected {
+    color: darken($body-color, 50%);
+}

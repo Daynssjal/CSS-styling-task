@@ -1,0 +1,43 @@
+@import 'variables';
+@import 'mixins';
+
+.menu {
+    width: 16%;
+    @include padding(0 0 0 1.5em);
+    @include font-size(16, 16);
+    @include box-sizing(border-box);
+
+    &__item {
+        @include padding(0.7em 0);
+        @include font-weight(normal);
+        @include flexbox(row, nowrap, flex-start, center);
+
+        &--selected {
+            color: darken($body-color, 50%);
+        }
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+    .menu {
+        width: 25%;
+        @include font-size(14, 16);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .menu {
+        width: 35%;
+        @include font-size(12, 16);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .menu {
+        width: 100%;
+        &__item {
+            @include padding(0.5em 0);
+        }
+    }
+}
